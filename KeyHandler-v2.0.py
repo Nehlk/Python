@@ -14,6 +14,7 @@ def process_key_press(key):
     
 
 
+
 #funcion para el Boton
 def resetKeyCount():
     global keyCount
@@ -32,11 +33,13 @@ ventana.configure(background = 'snow')
 etiqueta = tk.Label(ventana, textvariable = num, bg = "snow", fg = "black", font = ("Times 22 bold"))
 boton = tk.Button(ventana, text = "Reset", font = ("Times 13 bold"), bg = "green", fg = "snow", command = resetKeyCount )
 etiqueta.pack(padx = 61, pady = 66)
-boton.pack(padx = 40, pady = 20) #al declarar un boton o label, etc.. no olvidar el .pack que hace que lo cree
+boton.pack() #al declarar un boton o label, etc.. no olvidar el .pack que hace que lo cree
+
+#posiciona el boton, si no se pone X e Y queda posicionado inicialmente en una esquina superior izquierda
 boton.place( height=30, width=70, x = 120, y = 130)
  
 
-keyboard_listener = pynput.keyboard.Listener(on_press = process_key_press)
+keyboard_listener = pynput.keyboard.Listener(on_release = process_key_press)
 
 
 #2 threads at same time
