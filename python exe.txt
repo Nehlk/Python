@@ -1,0 +1,3 @@
+tener instalado pyinstaller (pip install pyinstaller)
+
+desde consola y ubicado en la carpeta del archivo escribir 'pyinstaller --onefile 'nameFile' '
